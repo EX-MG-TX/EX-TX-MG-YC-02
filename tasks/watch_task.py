@@ -18,8 +18,7 @@ async def watch_task(biliapi: asyncbili) -> None:
     ids = ret["data"]["archives"]
 
     try:
-        ret = await biliapi.report(204516234, 307178951, 500)
-	ret2 = await biliapi.report(756904275, 304166415, 500)
+        ret = await biliapi.report(204516234, 307178951, 300)
         if ret["code"] == 0:
             logging.info(f'{biliapi.name}: 成功模拟观看av号为{ids[5]["aid"]}的视频')
         else:
